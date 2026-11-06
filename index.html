@@ -190,8 +190,8 @@
   .step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; margin: 40px 0 16px; }
   .step h3 { margin-bottom: 2px; }
   .step-n { width: 44px; height: 44px; border-radius: 50%; background: var(--tiffany); color: var(--on-tiffany); display: grid; place-items: center; font-weight: 800; font-size: 18px; }
-  .gform { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-  .gform iframe { display: block; width: 100%; height: 960px; border: 0; }
+  .send { display: flex; gap: 12px; flex-wrap: wrap; }
+  .send .btn { flex: 1 1 220px; text-align: center; }
   footer { text-align: center; padding: 48px 20px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
   @media (max-width: 640px) {
@@ -485,7 +485,7 @@
     <details><summary>Khoá học dạng gì, xem ở đâu?</summary><p>Video quay sẵn, xem trên điện thoại hoặc máy tính, bất cứ lúc nào. Không deadline, học theo tốc độ của bạn.</p></details>
     <details><summary>Tự học và Coaching khác nhau thế nào?</summary><p>Tự học là trọn bộ các bước mình đang làm, bạn tự xem và tự áp dụng. Coaching là mình trực tiếp xem kênh của bạn, chỉ chỗ sai, đưa lộ trình sửa và đi cùng bạn 1 tháng. Gói Coaching đã bao gồm khoá Tự học.</p></details>
     <details><summary>Mình bận đi làm, có theo được không?</summary><p>Được. Mỗi module khoảng 60 phút. Giai đoạn đầu cần khoảng 5 tới 10 tiếng mỗi tuần để làm.</p></details>
-    <details><summary>Thanh toán xong bao lâu nhận link học?</summary><p>Hệ thống tự xác nhận chuyển khoản và gửi link trong 5 tới 15 phút. Sau 15 phút chưa nhận, nhắn Zalo kèm ảnh bill, mình xử lý ngay.</p></details>
+    <details><summary>Thanh toán xong bao lâu nhận link học?</summary><p>Bạn gửi ảnh bill qua form hoặc Zalo, mình tự tay kiểm tra và gửi link học trong ngày. Chờ lâu chưa thấy thì nhắn Zalo cho mình.</p></details>
   </div>
 </section>
 
@@ -505,21 +505,15 @@
 <section id="dang-ky">
   <div class="wrap">
     <h2>Đăng ký.</h2>
-    <p class="lead">3 bước. Link học tự gửi vào email trong 5 tới 15 phút sau khi chuyển khoản.</p>
+    <p class="lead">3 bước đơn giản. Mình tự tay kiểm tra từng bill và gửi link học cho bạn.</p>
 
-    <div class="step"><span class="step-n">1</span><div><h3>Điền form đăng ký</h3><p class="muted">Điền đúng email để nhận link học.</p></div></div>
-    <div class="gform">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkvZ8uNFn9dm4o3R1zt8hLNoFvDlG9Aiu1hL0U43w2TvTkuw/viewform?embedded=true" title="Form đăng ký khoá học" loading="lazy">Đang tải form…</iframe>
-    </div>
-    <p class="note">Form không hiện? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkvZ8uNFn9dm4o3R1zt8hLNoFvDlG9Aiu1hL0U43w2TvTkuw/viewform" target="_blank" rel="noopener">Mở form trong tab mới</a></p>
-
-    <div class="step"><span class="step-n">2</span><div><h3>Chuyển khoản</h3><p class="muted">Chọn gói và nhập số điện thoại bạn vừa điền ở form, mã QR sẽ tự có đúng số tiền và nội dung.</p></div></div>
+    <div class="step"><span class="step-n">1</span><div><h3>Chọn gói và chuyển khoản</h3><p class="muted">Nhập số điện thoại, mã QR sẽ có sẵn đúng số tiền và nội dung. Mở app ngân hàng, quét là xong.</p></div></div>
     <form id="reg" onsubmit="return false">
       <div class="pick">
         <label><input type="radio" name="plan" value="tuhoc" checked> <b>Tự học</b><br><span class="muted">587.000đ</span></label>
         <label><input type="radio" name="plan" value="coaching"> <b>Coaching 1-1</b><br><span class="muted">3.500.000đ</span></label>
       </div>
-      <label>Số điện thoại bạn vừa điền ở form<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="VD: 0901234567"></label>
+      <label>Số điện thoại (Zalo) của bạn<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="VD: 0901234567"></label>
     </form>
 
     <div class="pay show" id="pay">
@@ -532,11 +526,18 @@
           <dt>Số tiền</dt><dd id="amt"></dd>
           <dt>Nội dung</dt><dd><code id="memo"></code> <button class="copy" id="copyMemo">copy</button></dd>
         </dl>
-        <p class="muted" style="font-size:14px;margin-top:14px">Quét mã QR là đủ số tiền và nội dung.</p>
+        <p class="muted" style="font-size:14px;margin-top:14px">Chuyển xong nhớ <b>chụp màn hình bill</b> để gửi ở bước 2.</p>
       </div>
     </div>
 
-    <div class="step"><span class="step-n">3</span><div><h3>Nhận link học</h3><p class="muted">Link tự gửi vào email trong 5 tới 15 phút. Sau 15 phút chưa nhận, nhắn <a href="https://zalo.me/0858925686" target="_blank" rel="noopener">Zalo 0858925686</a> kèm ảnh bill, mình xử lý ngay.</p></div></div>
+    <div class="step"><span class="step-n">2</span><div><h3>Gửi ảnh bill chuyển khoản</h3><p class="muted">Chọn một trong hai cách, cách nào tiện thì dùng.</p></div></div>
+    <div class="send">
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfkvZ8uNFn9dm4o3R1zt8hLNoFvDlG9Aiu1hL0U43w2TvTkuw/viewform" target="_blank" rel="noopener">Gửi bill qua form →</a>
+      <a class="btn ghost" href="https://zalo.me/0858925686" target="_blank" rel="noopener">Gửi bill qua Zalo</a>
+    </div>
+    <p class="note" style="text-align:left">Qua form: điền tên, số điện thoại, email và tải ảnh bill lên. Qua Zalo: gửi ảnh bill kèm email nhận link học.</p>
+
+    <div class="step"><span class="step-n">3</span><div><h3>Nhận link học</h3><p class="muted">Mình kiểm tra bill và gửi link học qua email hoặc Zalo cho bạn trong ngày. Chờ lâu chưa thấy, cứ nhắn <a href="https://zalo.me/0858925686" target="_blank" rel="noopener">Zalo 0858925686</a>.</p></div></div>
   </div>
 </section>
 
