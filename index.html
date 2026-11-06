@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affiliate Không Giấu Nghề · Ngọc Vee</title>
+<meta name="description" content="Người ta kiếm tiền từ affiliate như thế nào? Ngọc Vee chia sẻ từng bước mình đang làm — nói thật, không hứa hẹn, không giấu nghề.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --line: #e1e5f0;
+    --text: #141a2e;
+    --muted: #5d6680;
+    --blue: #2f5bd6;
+    --blue-deep: #2448b8;
+    --blue-soft: #e8eefc;
+    --on-blue: #ffffff;
+    --on-blue-muted: #c9d6fa;
+    --yellow: #ffd84d;
+    --tiffany: #81d8d0;
+    --tiffany-deep: #5fc8be;
+    --on-tiffany: #0e2f2c;
+    --heading: "Be Vietnam Pro", "Helvetica Neue", Arial, sans-serif;
+    --sans: "Be Vietnam Pro", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  .bar { position: sticky; top: 0; z-index: 50; background: var(--text); color: #fff; font-size: 13px; font-weight: 600; }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 10px; padding-bottom: 10px; }
+  .bar a { text-decoration: none; background: var(--tiffany); color: var(--on-tiffany); padding: 6px 14px; border-radius: 999px; white-space: nowrap; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .wide { max-width: 1040px; }
+  section { padding: 88px 0; scroll-margin-top: 48px; }
+  section + section { border-top: 1px solid var(--line); }
+  .blue { background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); color: var(--on-blue); border-top: 0 !important; }
+  .blue + section { border-top: 0; }
+  .blue .muted, .blue .lead { color: var(--on-blue-muted); }
+  .blue em { color: var(--yellow); }
+
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+  .blue .eyebrow { color: var(--yellow); }
+  h1, h2, h3 { font-family: var(--heading); font-weight: 800; line-height: 1.15; letter-spacing: -.025em; }
+  h1 { font-size: clamp(42px, 8.5vw, 72px); }
+  h2 { font-size: clamp(30px, 5.6vw, 44px); margin-bottom: 24px; }
+  h3 { font-size: 25px; margin-bottom: 8px; }
+  em { font-style: normal; color: var(--blue); }
+  p + p { margin-top: 18px; }
+  .lead { font-size: 18px; color: var(--muted); }
+  .center { text-align: center; }
+  .muted { color: var(--muted); }
+  .big { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: clamp(26px, 5vw, 34px); line-height: 1.28; }
+  mark { background: var(--yellow); color: var(--text); padding: 0 6px; border-radius: 3px; }
+
+  /* hero */
+  .hero { padding: 100px 0 92px; text-align: center; }
+  .hero .lead { max-width: 580px; margin: 26px auto 0; }
+  .hero .sign { margin-top: 18px; font-weight: 600; }
+  .btn { display: inline-block; background: var(--tiffany); color: var(--on-tiffany); text-decoration: none; padding: 16px 30px; border-radius: 8px; border: 0; font: inherit; font-weight: 700; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); background: var(--tiffany-deep); box-shadow: 0 8px 24px rgba(95, 200, 190, .35); }
+  .btn.ghost { background: transparent; color: inherit; border: 1px solid currentColor; }
+  .btn.ghost:hover { background: transparent; box-shadow: none; }
+  .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+
+  /* honest box */
+  .honest { display: grid; gap: 12px; margin-top: 30px; }
+  .honest div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px 18px 54px; position: relative; }
+  .honest div::before { content: "✕"; position: absolute; left: 22px; top: 18px; font-weight: 800; color: #d64545; }
+  .honest div.yes::before { content: "✓"; color: var(--blue); }
+
+  /* pain */
+  .group-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin: 40px 0 14px; }
+  .pain { background: var(--card); border-left: 4px solid var(--blue); padding: 18px 22px; margin-bottom: 10px; border-radius: 0 8px 8px 0; }
+
+  /* puzzle */
+  .pieces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 32px 0; }
+  .piece { background: rgba(255, 255, 255, .1); border: 1px dashed rgba(255, 255, 255, .45); border-radius: 10px; padding: 18px 14px; text-align: center; font-weight: 600; font-size: 15px; line-height: 1.4; }
+  .piece span { display: block; font-size: 24px; margin-bottom: 6px; }
+
+  /* timeline */
+  .tl { border-left: 2px solid var(--line); margin: 36px 0 0 6px; }
+  .tl-item { position: relative; padding: 0 0 30px 28px; }
+  .tl-item::before { content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--blue); }
+  .tl-item .when { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--blue); }
+  .tl-item b { display: block; font-size: 18px; margin: 4px 0 6px; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+  .stat { background: var(--card); border: 1px solid var(--line); padding: 24px 20px; border-radius: 10px; }
+  .stat .v { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: clamp(32px, 5.5vw, 44px); color: var(--blue); line-height: 1; }
+  .stat .k { font-weight: 600; margin-top: 10px; }
+  .stat .s { font-size: 13px; color: var(--muted); }
+  .gallery { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .gallery figure { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .gallery img { width: 100%; aspect-ratio: 9 / 14; object-fit: cover; object-position: top; transition: transform .2s; }
+  .gallery a:hover img { transform: scale(1.03); }
+  .gallery figcaption { font-size: 13px; color: var(--muted); padding: 10px 12px; line-height: 1.45; }
+  .note { font-size: 14px; color: var(--muted); margin-top: 20px; text-align: center; }
+
+  /* value equation */
+  .veq { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px; }
+  .veq div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 22px; }
+  .veq b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .veq .ic { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--blue-soft); color: var(--blue); font-weight: 800; margin-bottom: 12px; }
+
+  /* modules */
+  .mod { display: grid; grid-template-columns: 64px 1fr; gap: 18px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .mod .num { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: 44px; color: var(--blue); line-height: 1; }
+  .mod ul { margin-top: 10px; }
+  .mod li { list-style: none; color: var(--muted); padding-left: 18px; position: relative; font-size: 15px; }
+  .mod li::before { content: "—"; position: absolute; left: 0; color: var(--blue); }
+
+  /* hotpot */
+  .hotpot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; margin: 34px 0; }
+  .hotpot .side { background: rgba(255, 255, 255, .1); border-radius: 12px; padding: 26px; }
+  .hotpot .side.course { background: #fff; color: var(--text); }
+  .hotpot .lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+  .hotpot .v { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: 40px; line-height: 1.1; margin: 8px 0 12px; }
+  .hotpot .course .v { color: var(--blue); }
+  .hotpot .vs { align-self: center; font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: 28px; }
+  .hotpot li { list-style: none; padding: 5px 0 5px 22px; position: relative; font-size: 15px; }
+  .hotpot .side li::before { content: "·"; position: absolute; left: 6px; font-weight: 800; }
+  .hotpot .course li::before { content: "✓"; left: 0; color: var(--blue); }
+  .one-line { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: clamp(28px, 5.4vw, 40px); line-height: 1.25; text-align: center; margin-top: 10px; }
+
+  /* fit */
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px; }
+  .fit .col { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 26px; }
+  .fit .col.yes { border: 2px solid var(--blue); }
+  .fit .lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
+  .fit .yes .lbl { color: var(--blue); }
+  .fit .no .lbl { color: var(--muted); }
+  .fit li { list-style: none; padding: 8px 0 8px 26px; position: relative; border-bottom: 1px solid var(--line); }
+  .fit li:last-child { border: 0; }
+  .fit .yes li::before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 800; }
+  .fit .no li::before { content: "✕"; position: absolute; left: 0; color: var(--muted); }
+
+  /* pricing */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; align-items: start; }
+  .plan { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 32px 28px; }
+  .plan.main { border: 2px solid var(--blue); position: relative; box-shadow: 0 16px 40px rgba(47, 91, 214, .12); }
+  .plan.main .ribbon { position: absolute; top: -13px; left: 28px; background: var(--blue); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+  .plan .name { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+  .plan h3 { margin-top: 8px; }
+  .plan .price { font-family: var(--heading); font-weight: 800; letter-spacing: -.02em; font-size: 50px; line-height: 1; margin: 18px 0 4px; }
+  .plan .sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .plan ul { margin: 0 0 26px; }
+  .plan li { list-style: none; padding: 9px 0 9px 26px; position: relative; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 800; }
+  .plan .btn { width: 100%; text-align: center; }
+
+  /* questions */
+  .q { padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .q b { font-family: var(--heading); font-weight: 700; font-size: 24px; display: block; line-height: 1.25; margin-bottom: 6px; }
+
+  /* faq */
+  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--blue); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); margin-top: 12px; }
+
+  /* register */
+  form { display: grid; gap: 14px; margin-top: 30px; }
+  label { font-size: 14px; font-weight: 600; display: grid; gap: 6px; }
+  input { background: var(--card); border: 1px solid var(--line); color: var(--text); font: inherit; font-weight: 400; padding: 14px 16px; border-radius: 8px; width: 100%; }
+  input:focus { outline: 2px solid var(--blue); border-color: transparent; }
+  .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pick label { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; cursor: pointer; display: block; font-weight: 400; }
+  .pick input { width: auto; margin-right: 8px; accent-color: var(--blue); }
+  .pick label:has(input:checked) { border: 2px solid var(--blue); background: var(--blue-soft); }
+  .pay { display: none; background: var(--card); border: 2px solid var(--blue); border-radius: 14px; padding: 28px; margin-top: 24px; }
+  .pay.show { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; }
+  .pay img { border-radius: 8px; }
+  .pay dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; }
+  .pay dt { color: var(--muted); }
+  .pay dd { font-weight: 600; }
+  .pay code { background: var(--blue-soft); color: var(--blue); padding: 2px 8px; border-radius: 4px; font-family: inherit; }
+  .copy { background: none; border: 1px solid var(--line); color: var(--muted); font: inherit; font-size: 12px; padding: 2px 8px; border-radius: 4px; cursor: pointer; margin-left: 6px; }
+
+  .step { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; margin: 40px 0 16px; }
+  .step h3 { margin-bottom: 2px; }
+  .step-n { width: 44px; height: 44px; border-radius: 50%; background: var(--tiffany); color: var(--on-tiffany); display: grid; place-items: center; font-weight: 800; font-size: 18px; }
+  .gform { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .gform iframe { display: block; width: 100%; height: 960px; border: 0; }
+  footer { text-align: center; padding: 48px 20px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 640px) {
+    section { padding: 64px 0; }
+    .hero { padding: 68px 0; }
+    .pieces { grid-template-columns: repeat(2, 1fr); }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stats .stat:last-child { grid-column: 1 / -1; }
+    .veq, .fit, .plans, .pick { grid-template-columns: 1fr; }
+    .hotpot { grid-template-columns: 1fr; }
+    .hotpot .vs { text-align: center; }
+    .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .mod { grid-template-columns: 1fr; gap: 6px; }
+    .pay.show { grid-template-columns: 1fr; }
+    .pay img { max-width: 220px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap wide">
+    <span>Ngọc Vee · Affiliate Không Giấu Nghề</span>
+    <a href="#hoc-phi">587K →</a>
+  </div>
+</div>
+
+<!-- ============ HERO: tò mò, không hứa hẹn ============ -->
+<header class="hero blue">
+  <div class="wrap">
+    <div class="eyebrow">@ngocvee8 · Bình thường hoá video bán hàng</div>
+    <h1>Người ta kiếm tiền từ affiliate <em>như thế nào?</em></h1>
+    <p class="lead">Mình từng có tháng chạm 100 triệu hoa hồng. Nhưng mình không hứa bạn con số đó. Mình chỉ mở máy ra, cho bạn xem từng bước mình đang làm mỗi ngày. Thật, không tô vẽ, không giấu nghề.</p>
+    <p class="lead">Xem xong, làm hay không là quyền của bạn.</p>
+    <div class="btns">
+      <a class="btn" href="#hoc-phi">Xem khoá học 587K</a>
+      <a class="btn ghost" href="#so-lieu">Xem hình thật</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROOF ============ -->
+<section id="so-lieu">
+  <div class="wrap">
+    <h2>Số thật của mình. <em>Không chỉnh sửa.</em></h2>
+    <p class="lead">Không phải để khoe. Để bạn tự kiểm chứng mình đang nói thật.</p>
+    <div class="gallery">
+      <figure><a href="anh/10m-view.jpg" target="_blank" rel="noopener"><img src="anh/10m-view.jpg" alt="Phân tích video hộp gỗ tiết kiệm tiền: 10,8 triệu lượt xem" loading="lazy"></a><figcaption>Video 10,8 triệu view, quay ở nhà bằng điện thoại</figcaption></figure>
+      <figure><a href="anh/gmv-thang-2-2026.jpg" target="_blank" rel="noopener"><img src="anh/gmv-thang-2-2026.jpg" alt="Dữ liệu hoa hồng tháng 2/2026: GMV 1,1 tỷ" loading="lazy"></a><figcaption>Tháng 2/2026: 1,1 tỷ GMV đầu tiên, kênh 12K followers</figcaption></figure>
+      <figure><a href="anh/gmv-thang-6-2026.jpg" target="_blank" rel="noopener"><img src="anh/gmv-thang-6-2026.jpg" alt="Dữ liệu hoa hồng tháng 6/2026: GMV 1,8 tỷ" loading="lazy"></a><figcaption>Tháng 6/2026: 1,8 tỷ GMV, 13,8K món bán ra</figcaption></figure>
+      <figure><a href="anh/moc-thoi-gian.jpg" target="_blank" rel="noopener"><img src="anh/moc-thoi-gian.jpg" alt="Hành trình từ tháng 7/2025 đến tháng 3/2026" loading="lazy"></a><figcaption>Từ ngày đầu 427K hoa hồng đến mốc 100 triệu tháng 3/2026</figcaption></figure>
+      <figure><a href="anh/hanh-trinh-truoc.jpg" target="_blank" rel="noopener"><img src="anh/hanh-trinh-truoc.jpg" alt="Những năm trước: du học, đi làm văn phòng, bán hàng online" loading="lazy"></a><figcaption>Những năm "đã thử đủ thứ" trước khi làm affiliate</figcaption></figure>
+      <figure><a href="anh/chi-gai-rut-tien.jpg" target="_blank" rel="noopener"><img src="anh/chi-gai-rut-tien.jpg" alt="Chị gái rút 5 triệu tiền hoa hồng" loading="lazy"></a><figcaption>Chị gái mình bận rộn, làm "sương sương", rút 5 triệu · 29/9/2026</figcaption></figure>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="v">10,8M</div><div class="k">view</div><div class="s">video cao nhất · 31/8/2025</div></div>
+      <div class="stat"><div class="v">1,8 tỷ</div><div class="k">GMV có hoa hồng</div><div class="s">tháng 6/2026</div></div>
+      <div class="stat"><div class="v">0đ</div><div class="k">vốn nhập hàng</div><div class="s">không kho, không hàng tồn</div></div>
+    </div>
+    <p class="note">Bấm vào ảnh để xem rõ. Xem tận mắt kênh của mình: <a href="https://www.tiktok.com/@ngocvee8" target="_blank" rel="noopener">TikTok @ngocvee8</a> · <a href="https://www.instagram.com/ngocvee8/" target="_blank" rel="noopener">Instagram @ngocvee8</a></p>
+  </div>
+</section>
+
+<!-- ============ NÓI THẬT: định danh người nói thật ============ -->
+<section id="noi-that">
+  <div class="wrap">
+    <div class="eyebrow">Nói trước cho rõ</div>
+    <h2>Mình là người <em>nói thật.</em></h2>
+    <p class="lead">Bạn đã thấy quá nhiều quảng cáo "kiếm trăm triệu mỗi tháng". Nên mình nói luôn những gì trang này sẽ không có.</p>
+    <div class="honest">
+      <div>Không có câu "học xong chắc chắn kiếm được X triệu".</div>
+      <div>Không có màn khoe xe, khoe nhà. Số liệu của mình là thật, nhưng đó là của mình sau hơn một năm, không phải lời hứa cho bạn.</div>
+      <div>Không có chuyện "làm 1 tiếng mỗi ngày, ngủ cũng ra tiền".</div>
+      <div class="yes">Chỉ có đúng những bước mình đã làm, đang làm. Cái gì được, cái gì chưa được, mình nói hết.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN ============ -->
+<section>
+  <div class="wrap">
+    <h2>Có thể bạn đang ở đây.</h2>
+
+    <div class="group-label">Bạn đang tò mò</div>
+    <div class="pain">Bạn lướt TikTok, thấy người ta review đồ, gắn giỏ hàng. Bạn tự hỏi: họ có kiếm được tiền thật không, và kiếm kiểu gì?</div>
+    <div class="pain">Bạn nghe nhiều về affiliate, nhưng mỗi người nói một kiểu. Bạn không biết đâu là thật, đâu là quảng cáo.</div>
+
+    <div class="group-label">Bạn đang cân nhắc</div>
+    <div class="pain">Bạn đang suy nghĩ có nên làm nghề này không. Bạn muốn nhìn tận mắt công việc thật trông như thế nào trước khi quyết.</div>
+    <div class="pain">Bạn sợ lộ mặt, sợ không biết nói, sợ không có máy xịn. Nên cứ để "khi nào sẵn sàng" rồi tính.</div>
+
+    <div class="group-label">Bạn đã thử rồi</div>
+    <div class="pain">Bạn đăng đều mà video quanh quẩn vài trăm view. Có video lên được, mà hoa hồng vẫn bằng 0.</div>
+    <div class="pain">Bạn không biết vì sao video này nổ còn video kia không. Mỗi lần đăng là một lần cầu may.</div>
+  </div>
+</section>
+
+<!-- ============ MẢNH GHÉP ============ -->
+<section class="blue">
+  <div class="wrap">
+    <div class="eyebrow">Sự thật về affiliate</div>
+    <h2>Affiliate là một bức tranh <em>nhiều mảnh ghép.</em></h2>
+    <p class="lead">Không có một bí kíp nào làm bạn giàu sau một đêm. Thu nhập là kết quả khi nhiều mảnh nhỏ được ghép đúng chỗ.</p>
+    <div class="pieces">
+      <div class="piece"><span>🧠</span>Hiểu thuật toán</div>
+      <div class="piece"><span>🛍️</span>Chọn đúng sản phẩm</div>
+      <div class="piece"><span>🎬</span>Quay được video</div>
+      <div class="piece"><span>✂️</span>Edit nhanh</div>
+      <div class="piece"><span>🪝</span>3 giây đầu</div>
+      <div class="piece"><span>📅</span>Đăng đều</div>
+      <div class="piece"><span>🤝</span>Làm với brand</div>
+      <div class="piece"><span>⏳</span>Kiên nhẫn</div>
+    </div>
+    <p>Phần lớn người làm không ra tiền không phải vì họ dở. Mà vì họ đang thiếu một hai mảnh, và không biết mình thiếu mảnh nào.</p>
+    <p><b>Khoá học đưa bạn đủ các mảnh ghép, và chỉ bạn cách mình ghép chúng. Còn ráp thành bức tranh của riêng bạn, đó là phần việc của bạn.</b></p>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section>
+  <div class="wrap">
+    <h2>Mình đã thử <em>đủ thứ.</em></h2>
+    <p class="lead">Không phải mình giỏi hơn ai. Mình chỉ đi sai đủ lâu để biết đường nào đúng. Quen không?</p>
+    <div class="tl">
+      <div class="tl-item"><div class="when">Trước đó</div><b>Du học sinh Úc ngành Marketing, rồi đi làm văn phòng</b><span class="muted">Làm marketing 1–2 năm, nhận thêm 1–2 job bên ngoài, làm tới kiệt sức. Lương vẫn chỉ 1x triệu.</span></div>
+      <div class="tl-item"><div class="when">2019 – 2025</div><b>Xây thương hiệu cá nhân, quay vlog, edit hàng giờ</b><span class="muted">Không có thu nhập. Nản, bỏ, làm lại, rồi lại bỏ. Suốt 6 năm.</span></div>
+      <div class="tl-item"><div class="when">2 – 3 năm</div><b>Bán đồ lót online, một mình làm hết</b><span class="muted">Tự livestream, tự chăm sóc khách, tự xây shop trên sàn. Càng làm càng đuối vì dòng tiền, chi phí tăng, sản phẩm phụ thuộc xưởng.</span></div>
+      <div class="tl-item"><div class="when">Tháng 7 · 2025</div><b>Tình cờ đi một buổi workshop, và đăng ký học TikTok Affiliate</b><span class="muted">Mình trả 6,8 triệu cho khoá học đó. Lần đầu mình hiểu thuật toán, cách chọn sản phẩm, cách viết kịch bản.</span></div>
+      <div class="tl-item"><div class="when">31 · 8 · 2025</div><b>Video "hộp gỗ tiết kiệm tiền" đạt 10,8 triệu view</b><span class="muted">Quay bằng điện thoại, ngồi ở nhà. Nhưng cũng có rất nhiều video chỉ vài chục view. Đó là chuyện bình thường của nghề này.</span></div>
+      <div class="tl-item"><div class="when">Tháng 10 · 2025</div><b>All in TikTok Affiliate</b><span class="muted">Tạm nghỉ shop đồ lót, làm affiliate toàn thời gian.</span></div>
+      <div class="tl-item"><div class="when">Tháng 2 · 2026</div><b>Chạm 1,1 tỷ GMV đầu tiên, trên kênh 12K followers</b><span class="muted">Kênh không lớn. Mình vẫn bất ngờ.</span></div>
+      <div class="tl-item"><div class="when">Tháng 3 · 2026</div><b>Cột mốc 100 triệu hoa hồng từ TikTok</b><span class="muted">Không phải tháng nào cũng vậy. Có tháng lên, có tháng xuống.</span></div>
+      <div class="tl-item"><div class="when">Hôm nay</div><b>Vẫn đang làm, vẫn đang học</b><span class="muted">Và bắt đầu chia sẻ lại từng bước mình làm, cho người đang đứng ở chỗ mình ngày xưa.</span></div>
+    </div>
+    <p class="big" style="margin-top:8px">Nếu được quay lại, mình sẽ đi học <em>sớm hơn.</em> Tiếc tiền học, mà mất 6 năm tự mò.</p>
+  </div>
+</section>
+
+<!-- ============ VALUE EQUATION ============ -->
+<section>
+  <div class="wrap">
+    <h2>Khoá học này giúp bạn <em>đúng 4 việc.</em></h2>
+    <div class="veq">
+      <div><span class="ic">1</span><b>Thấy rõ bức tranh</b><span class="muted">Người ta kiếm tiền từ affiliate thế nào, từng bước một. Đủ để bạn tự quyết có hợp với mình không.</span></div>
+      <div><span class="ic">2</span><b>Bớt đoán mò</b><span class="muted">Đây là các bước mình đã làm thật, đã sai và đã sửa. Bạn không phải tự thử từ đầu.</span></div>
+      <div><span class="ic">3</span><b>Bắt đầu nhanh</b><span class="muted">6 module, mỗi module khoảng 60 phút. Một tuần, mỗi tối một module là xem xong.</span></div>
+      <div><span class="ic">4</span><b>Làm nhẹ nhàng</b><span class="muted">Chỉ cần điện thoại. Không vốn, không kho, không cần studio, không bắt buộc lộ mặt.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODULES ============ -->
+<section id="chuong-trinh">
+  <div class="wrap">
+    <h2>Bên trong khoá học.</h2>
+    <p class="lead">6 module video quay sẵn. Là đúng những gì mình đang làm, không phải lý thuyết.</p>
+
+    <div class="mod"><div class="num">01</div><div><h3>Tư duy & thuật toán TikTok</h3><p class="muted">Vì sao cùng một sản phẩm, người triệu view, người 200 view.</p><ul><li>Thuật toán đẩy video như thế nào</li><li>Setup kênh và đăng ký affiliate từ số 0</li></ul></div></div>
+    <div class="mod"><div class="num">02</div><div><h3>Chọn sản phẩm</h3><p class="muted">Không phải cứ trending là bán được.</p><ul><li>Checklist 5 tiêu chí mình dùng trước khi quay</li><li>Cách mình lọc sản phẩm hằng ngày</li></ul></div></div>
+    <div class="mod"><div class="num">03</div><div><h3>Làm video không khó</h3><p class="muted">Không cần chỉn chu, không cần đèn, không cần kịch bản hoàn hảo.</p><ul><li>Các kiểu content quay 5 phút tại nhà</li><li>Không lộ mặt vẫn làm được</li></ul></div></div>
+    <div class="mod"><div class="num">04</div><div><h3>Quay & edit</h3><p class="muted">Chỉ cần điện thoại.</p><ul><li>Quay 1 lần ra nhiều video</li><li>Edit CapCut gọn trong 20 phút</li></ul></div></div>
+    <div class="mod"><div class="num">05</div><div><h3>Nhân rộng</h3><p class="muted">Khi một mình không đủ thời gian.</p><ul><li>Từ 1 kênh lên nhiều kênh</li><li>Tìm người phụ, chia việc</li></ul></div></div>
+    <div class="mod"><div class="num">06</div><div><h3>Làm việc với brand</h3><p class="muted">Khi nào xin mẫu, khi nào brand tự tìm đến.</p><ul><li>Chọn brand không bất chấp</li><li>5 mẫu tin nhắn copy được</li></ul></div></div>
+  </div>
+</section>
+
+<!-- ============ LẨU NƯỚNG: neo giá ============ -->
+<section class="blue">
+  <div class="wrap">
+    <div class="eyebrow">Nói chuyện tiền</div>
+    <h2>587K là bao nhiêu?</h2>
+    <p class="lead">Bằng đúng một bữa lẩu nướng với bạn bè.</p>
+    <div class="hotpot">
+      <div class="side">
+        <div class="lbl">Một bữa lẩu nướng</div>
+        <div class="v">~587K</div>
+        <ul>
+          <li>Bạn rủ là đi liền, không cần suy nghĩ</li>
+          <li>Vui một buổi tối</li>
+          <li>Ăn xong, về nhà, hết</li>
+        </ul>
+      </div>
+      <div class="vs">vs</div>
+      <div class="side course">
+        <div class="lbl">Khoá học</div>
+        <div class="v">587K</div>
+        <ul>
+          <li>Xem lại bao nhiêu lần cũng được, trọn đời</li>
+          <li>Thấy tận mắt một nghề mới làm thế nào</li>
+          <li>Có thể mở ra một nguồn thu nhập mới</li>
+        </ul>
+      </div>
+    </div>
+    <p>Đi ăn một bữa thì bạn không đắn đo. Vậy một bữa để thử mở ra cánh cửa thu nhập mới, sao không thử một lần?</p>
+    <p>Tháng 7/2025, mình trả <b>6,8 triệu</b> cho khoá học đầu tiên của mình. Khoá này mình để <b>587K</b>, vì mình muốn bạn bắt đầu mà không phải suy nghĩ nhiều về tiền.</p>
+    <p class="one-line" style="margin-top:36px">Bữa lẩu nướng no một tối.<br><em>Kỹ năng thì theo bạn cả đời.</em></p>
+  </div>
+</section>
+
+<!-- ============ AI NÊN / KHÔNG NÊN ============ -->
+<section>
+  <div class="wrap">
+    <h2>Không đăng ký <em>cũng không sao hết.</em></h2>
+    <p class="lead">Thật đó. Khoá học này không dành cho tất cả mọi người.</p>
+    <div class="fit">
+      <div class="col yes">
+        <div class="lbl">Đăng ký nếu bạn</div>
+        <ul>
+          <li>Tò mò người ta kiếm tiền từ affiliate thế nào</li>
+          <li>Đang nghĩ có nên làm nghề này không</li>
+          <li>Muốn biết các bước làm cụ thể ra sao</li>
+          <li>Chịu dành 5 tới 10 tiếng mỗi tuần để thử</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <div class="lbl">Đừng đăng ký nếu bạn</div>
+        <ul>
+          <li>Muốn một con số thu nhập được cam kết</li>
+          <li>Tìm cách làm giàu nhanh</li>
+          <li>Chỉ muốn xem cho biết, không định làm</li>
+          <li>Không có thời gian trong vài tháng tới</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="hoc-phi">
+  <div class="wrap wide">
+    <div class="center">
+      <h2>Học phí.</h2>
+      <p class="lead">Giá để bạn không phải suy nghĩ nhiều. Mua một lần, học trọn đời.</p>
+    </div>
+    <div class="plans">
+      <div class="plan main">
+        <span class="ribbon">Bắt đầu từ đây</span>
+        <div class="name">Tự học</div>
+        <h3>Không Giấu Nghề</h3>
+        <div class="price">587.000đ</div>
+        <div class="sub">Bằng một bữa lẩu nướng · học trọn đời</div>
+        <ul>
+          <li>6 module video quay sẵn: đúng các bước mình đang làm</li>
+          <li>Checklist 5 tiêu chí chọn sản phẩm</li>
+          <li>5 mẫu tin nhắn làm việc với brand</li>
+          <li>Cộng đồng học viên để hỏi bài</li>
+          <li>Cập nhật nội dung mới miễn phí</li>
+          <li>Xem trên điện thoại, lúc nào cũng được</li>
+        </ul>
+        <a class="btn" href="#dang-ky" data-plan="tuhoc">Đăng ký 587K</a>
+      </div>
+      <div class="plan">
+        <div class="name">Coaching 1-1</div>
+        <h3>Khám & chữa kênh</h3>
+        <div class="price">3.500.000đ</div>
+        <div class="sub">Cho bạn muốn có người đi cùng</div>
+        <ul>
+          <li>1 buổi video call 1-1, 2 tiếng. Bạn gửi kênh trước để mình chuẩn bị</li>
+          <li>Khám kênh: chỉ ra kênh đang sai ở đâu</li>
+          <li>Chữa kênh: lộ trình sửa riêng cho kênh của bạn</li>
+          <li>Đồng hành 1 tháng qua chat, voice</li>
+          <li>Tài liệu ghi chú sau buổi call</li>
+          <li>Tặng kèm khoá Tự học</li>
+        </ul>
+        <a class="btn ghost" href="#dang-ky" data-plan="coaching" style="width:100%;text-align:center">Đăng ký coaching</a>
+      </div>
+    </div>
+    <p class="note">Đã mua Tự học và muốn lên Coaching? Chỉ cần bù chênh lệch, nhắn Zalo cho mình.</p>
+  </div>
+</section>
+
+<!-- ============ SELF CHECK ============ -->
+<section>
+  <div class="wrap">
+    <h2>Trước khi bạn bấm đăng ký.</h2>
+    <p class="lead">Trả lời thật với chính mình. Không cần gửi cho ai.</p>
+    <div class="q"><b>Bạn đã nghĩ tới chuyện này bao lâu rồi?</b><span class="muted">Một tháng, sáu tháng, hay đã mấy năm? Thời gian nghĩ cũng là thời gian trôi qua.</span></div>
+    <div class="q"><b>Một năm nữa, bạn muốn mình đang ở đâu?</b><span class="muted">Vẫn đang tò mò, hay đã thử và biết rõ nghề này có hợp với mình không?</span></div>
+    <div class="q"><b>Bạn đã chi bao nhiêu cho những bữa ăn chơi tháng này?</b><span class="muted">Không sai gì cả. Chỉ là để so sánh cho công bằng.</span></div>
+    <div class="q"><b>Nếu không thử, bạn có tiếc không?</b><span class="muted">Mình đã từng tiếc. Tiền học thì kiếm lại được, nhưng 6 năm thì không lấy lại được.</span></div>
+    <p style="margin-top:28px">Nếu câu trả lời rõ ràng, đăng ký. Còn nếu chưa, cứ để đó. Lúc nào sẵn sàng thì quay lại.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <h2>Câu hỏi thường gặp.</h2>
+    <details><summary>Học xong có chắc kiếm được tiền không?</summary><p>Không ai chắc được, kể cả mình. Ai cam kết với bạn một con số là đang chưa nói thật. Thứ mình chắc là: đây là đúng những bước mình đã làm để sống được bằng nghề này.</p></details>
+    <details><summary>Mình chưa có kênh TikTok, học được không?</summary><p>Được. Module 1 hướng dẫn từ đầu: tạo tài khoản, setup kênh, đăng ký affiliate.</p></details>
+    <details><summary>Khoá học dạng gì, xem ở đâu?</summary><p>Video quay sẵn, xem trên điện thoại hoặc máy tính, bất cứ lúc nào. Không deadline, học theo tốc độ của bạn.</p></details>
+    <details><summary>Tự học và Coaching khác nhau thế nào?</summary><p>Tự học là trọn bộ các bước mình đang làm, bạn tự xem và tự áp dụng. Coaching là mình trực tiếp xem kênh của bạn, chỉ chỗ sai, đưa lộ trình sửa và đi cùng bạn 1 tháng. Gói Coaching đã bao gồm khoá Tự học.</p></details>
+    <details><summary>Mình bận đi làm, có theo được không?</summary><p>Được. Mỗi module khoảng 60 phút. Giai đoạn đầu cần khoảng 5 tới 10 tiếng mỗi tuần để làm.</p></details>
+    <details><summary>Thanh toán xong bao lâu nhận link học?</summary><p>Hệ thống tự xác nhận chuyển khoản và gửi link trong 5 tới 15 phút. Sau 15 phút chưa nhận, nhắn Zalo kèm ảnh bill, mình xử lý ngay.</p></details>
+  </div>
+</section>
+
+<!-- ============ HEART ============ -->
+<section class="blue">
+  <div class="wrap">
+    <div class="eyebrow">Thật lòng</div>
+    <h2>Đừng như mình <em>ngày trước.</em></h2>
+    <p>Ngày trước mình tiếc tiền đi học, rồi mất 6 năm tự mò. Mình không muốn bạn lặp lại chuyện đó.</p>
+    <p>Mình không hứa bạn sẽ kiếm được bao nhiêu. Mình chỉ hứa cho bạn xem đầy đủ, thật thà, những gì mình đang làm.</p>
+    <p>Phần còn lại là của bạn.</p>
+    <div class="btns" style="justify-content:flex-start"><a class="btn" href="#dang-ky">Đăng ký 587K →</a></div>
+  </div>
+</section>
+
+<!-- ============ REGISTER ============ -->
+<section id="dang-ky">
+  <div class="wrap">
+    <h2>Đăng ký.</h2>
+    <p class="lead">3 bước. Link học tự gửi vào email trong 5 tới 15 phút sau khi chuyển khoản.</p>
+
+    <div class="step"><span class="step-n">1</span><div><h3>Điền form đăng ký</h3><p class="muted">Điền đúng email để nhận link học.</p></div></div>
+    <div class="gform">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkvZ8uNFn9dm4o3R1zt8hLNoFvDlG9Aiu1hL0U43w2TvTkuw/viewform?embedded=true" title="Form đăng ký khoá học" loading="lazy">Đang tải form…</iframe>
+    </div>
+    <p class="note">Form không hiện? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkvZ8uNFn9dm4o3R1zt8hLNoFvDlG9Aiu1hL0U43w2TvTkuw/viewform" target="_blank" rel="noopener">Mở form trong tab mới</a></p>
+
+    <div class="step"><span class="step-n">2</span><div><h3>Chuyển khoản</h3><p class="muted">Chọn gói và nhập số điện thoại bạn vừa điền ở form, mã QR sẽ tự có đúng số tiền và nội dung.</p></div></div>
+    <form id="reg" onsubmit="return false">
+      <div class="pick">
+        <label><input type="radio" name="plan" value="tuhoc" checked> <b>Tự học</b><br><span class="muted">587.000đ</span></label>
+        <label><input type="radio" name="plan" value="coaching"> <b>Coaching 1-1</b><br><span class="muted">3.500.000đ</span></label>
+      </div>
+      <label>Số điện thoại bạn vừa điền ở form<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="VD: 0901234567"></label>
+    </form>
+
+    <div class="pay show" id="pay">
+      <img id="qr" alt="Mã QR chuyển khoản" width="200" height="200">
+      <div>
+        <dl>
+          <dt>Ngân hàng</dt><dd>Techcombank</dd>
+          <dt>Chủ tài khoản</dt><dd>Trần Nguyễn Bảo Ngọc</dd>
+          <dt>Số tài khoản</dt><dd>88822222 <button class="copy" data-copy="88822222">copy</button></dd>
+          <dt>Số tiền</dt><dd id="amt"></dd>
+          <dt>Nội dung</dt><dd><code id="memo"></code> <button class="copy" id="copyMemo">copy</button></dd>
+        </dl>
+        <p class="muted" style="font-size:14px;margin-top:14px">Quét mã QR là đủ số tiền và nội dung.</p>
+      </div>
+    </div>
+
+    <div class="step"><span class="step-n">3</span><div><h3>Nhận link học</h3><p class="muted">Link tự gửi vào email trong 5 tới 15 phút. Sau 15 phút chưa nhận, nhắn <a href="https://zalo.me/0858925686" target="_blank" rel="noopener">Zalo 0858925686</a> kèm ảnh bill, mình xử lý ngay.</p></div></div>
+  </div>
+</section>
+
+<footer>
+  Ngọc Vee · <a href="https://www.tiktok.com/@ngocvee8" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.instagram.com/ngocvee8/" target="_blank" rel="noopener">Instagram</a> · Zalo <a href="https://zalo.me/0858925686" target="_blank" rel="noopener">0858925686</a><br>© 2026 Ngọc Vee
+</footer>
+
+<script>
+  const PLANS = {
+    tuhoc:    { amount: 587000,  memo: "TIKTOK" },
+    coaching: { amount: 3500000, memo: "COACHING" }
+  };
+  const BANK = { bin: "TCB", acc: "88822222", name: "TRAN NGUYEN BAO NGOC" };
+
+  // Nút "Đăng ký" ở bảng giá chọn sẵn gói tương ứng
+  document.querySelectorAll("[data-plan]").forEach(a => a.addEventListener("click", () => {
+    document.querySelector(`input[name=plan][value=${a.dataset.plan}]`).checked = true;
+    updatePay();
+  }));
+
+  const reg = document.getElementById("reg");
+  function updatePay() {
+    const plan = PLANS[reg.plan.value];
+    const phone = reg.phone.value.replace(/\D/g, "");
+    const memo = `${phone || "[SĐT]"} ${plan.memo}`;
+    document.getElementById("amt").textContent = plan.amount.toLocaleString("vi-VN") + "đ";
+    document.getElementById("memo").textContent = memo;
+    document.getElementById("copyMemo").dataset.copy = memo;
+    document.getElementById("qr").src =
+      `https://img.vietqr.io/image/${BANK.bin}-${BANK.acc}-compact2.png?amount=${plan.amount}` +
+      `&addInfo=${encodeURIComponent(phone ? memo : plan.memo)}&accountName=${encodeURIComponent(BANK.name)}`;
+  }
+  reg.addEventListener("input", updatePay);
+  updatePay();
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".copy");
+    if (!b || !b.dataset.copy) return;
+    navigator.clipboard.writeText(b.dataset.copy).then(() => {
+      b.textContent = "đã copy";
+      setTimeout(() => b.textContent = "copy", 1500);
+    });
+  });
+</script>
+</body>
+</html>
